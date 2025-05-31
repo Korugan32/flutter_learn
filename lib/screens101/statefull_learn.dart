@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/language/language_items.dart';
 import 'package:flutter_learn/product/welcome_counter_button.dart';
@@ -16,10 +14,11 @@ class _StatefullLearnViewState extends State<StatefullLearnView> {
   int _welcomeCounter = 0;
 
   void _updateCounter(bool isIncrement) {
-    if (isIncrement)
+    if (isIncrement) {
       _counter++;
-    else
+    } else {
       _counter--;
+    }
     setState(() {});
   }
 
@@ -38,7 +37,7 @@ class _StatefullLearnViewState extends State<StatefullLearnView> {
             },
             child: Text('Merhaba $_welcomeCounter'),
           ), // bu _welcome counter print metodunu calistiriken yada kisaca widget buildini her basildiginda cagirirken asagidaki ffonksiyon kendi icindeki buildi cagirir.
-          WelcomeCounterButton() // printi cagirmaz kendi widgeti icindekini build eder.
+          WelcomeCounterButton(), // printi cagirmaz kendi widgeti icindekini build eder.
         ],
       ),
       floatingActionButton: Row(mainAxisSize: MainAxisSize.min, children: [_increaseButton(), _decreaseButton()]),
