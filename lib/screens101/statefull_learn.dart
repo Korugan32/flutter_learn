@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/language/language_items.dart';
+import 'package:flutter_learn/product/language/language_items.dart';
 import 'package:flutter_learn/product/welcome_counter_button.dart';
 
 class StatefullLearnView extends StatefulWidget {
