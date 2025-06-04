@@ -7,7 +7,6 @@ class PersonalDemoView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(_title),centerTitle: true,),
-      drawer: Drawer(),
       body: Padding(
         padding: EdgeInsets.all(5),
         child: Column(
