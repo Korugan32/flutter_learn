@@ -7,8 +7,10 @@ environment:
   sdk: ^3.8.0
 
 dependencies:
+  dio: ^5.8.0+1
   flutter:
     sdk: flutter
+
 
 dev_dependencies:
   flutter_test:
