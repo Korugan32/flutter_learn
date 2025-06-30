@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/demos/design_demos/blur_demo.dart';
 import 'package:flutter_learn/demos/personal_demo.dart';
+import 'package:flutter_learn/screens202/password_text_field_learn.dart';
 import 'package:flutter_learn/screens202/service/post_model.dart';
 import 'package:flutter_learn/screens202/service/post_service.dart';
 
@@ -38,16 +39,26 @@ class _ServiceLearnViewState extends State<ServiceLearnView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: GlassAppBar(title: ""),
+      appBar: AppBar(backgroundColor: Colors.amber,),
       body: isLoading
           ? Center(child: CircularProgressIndicator.adaptive())
-          : ListView.builder(
-            itemCount: _items?.length ?? 0,
-              itemBuilder: (context, index) {
-                return _CardItem(model: _items?[index]);
-              },
+          : Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Expanded(child: PasswordTextFieldLearn()),
+                Expanded(
+                  flex: 5,
+                  child: ListView.builder(
+                    itemCount: _items?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        return _CardItem(model: _items?[index]);
+                      },
+                    ),
+                ),
+              ],
             ),
+          ),
     );
   }
 }
