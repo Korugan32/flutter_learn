@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/demos/json_dio_api_demo/home_view_model.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,6 +28,9 @@ class HomePage extends StatelessWidget {
                 final ticker = viewModel.cryptoTickers?[index];
                 return Card(
                   child: ListTile(
+                    onTap: () {
+                      context.push("/secondPage");
+                    },
                     title: Text(ticker?.name ?? "Unknown"),
                     subtitle: Text("Price: ${ticker?.quotes?["USD"]?.price.toString()}" ?? "0"),
                   ),

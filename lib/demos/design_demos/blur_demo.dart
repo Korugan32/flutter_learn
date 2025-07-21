@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BlurDemoView extends StatelessWidget {
   const BlurDemoView({super.key});
@@ -8,7 +9,7 @@ class BlurDemoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: GlassAppBar(title: "Deneme", leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.orange,)),actions: [IconButton(onPressed: (){}, icon: Icon(Icons.add,color: Colors.orange,)),],),
+      appBar: GlassAppBar(title: "Deneme", leading: IconButton(onPressed: (){ context.pop();}, icon: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.orange,)),actions: [IconButton(onPressed: (){}, icon: Icon(Icons.add,color: Colors.orange,)),],),
       extendBodyBehindAppBar: true, // AppBar arka planla birleşsin
       body: ListView(
         children: [
