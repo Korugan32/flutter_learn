@@ -30,3 +30,4 @@ flutter:
     - assets/logo.png
     - assets/google.png
     - assets/logo_white.png
+    - assets/mock.json

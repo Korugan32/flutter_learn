@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "title": "Dummy1",
+        "amount": 4
+    },
+    {
+        "id": 1,
+        "title": "Dummy2",
+        "amount": 32
+    },
+    {
+        "id": 2,
+        "title": "Dummy3",
+        "amount": 3
+    },
+    {
+        "id": 3,
+        "title": "Dummy4",
+        "amount": 1
+    },
+    {
+        "id": 4,
+        "title": "Dummy5",
+        "amount": 6
+    }
+]
