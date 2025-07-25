@@ -27,3 +27,6 @@ flutter:
   assets:
     - assets/images.jpg
     - assets/apple.png
+    - assets/logo.png
+    - assets/google.png
+    - assets/logo_white.png
