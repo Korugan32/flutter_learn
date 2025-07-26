@@ -3,11 +3,15 @@ import 'package:flutter_learn/demos/json_dio_api_demo/crypto_service.dart';
 import 'package:flutter_learn/demos/json_dio_api_demo/home_page.dart';
 import 'package:flutter_learn/demos/json_dio_api_demo/home_view_model.dart';
 import 'package:flutter_learn/screens202/router/app_routes.dart';
+import 'package:flutter_learn/staj/note_app/models/note_model.dart';
+import 'package:flutter_learn/staj/note_app/views/note_adding.dart';
+import 'package:flutter_learn/staj/note_app/views/note_app_screen.dart';
+import 'package:flutter_learn/staj/note_app/views/note_details.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-final router = GoRouter(
-  initialLocation: AppRoute.home.path,
+final GoRouter appRouter = GoRouter(
+  initialLocation: "/note",
   routes: [
     GoRoute(
       path: AppRoute.home.path,
@@ -16,7 +20,6 @@ final router = GoRouter(
         return ChangeNotifierProvider(
           create: (context) => HomeViewModel(
             // CryptoService'in somut bir örneğini oluşturup ViewModel'e veriyoruz.
-            // Daha büyük projelerde burası get_it gibi bir locator'dan gelirdi.
             cryptoService: CryptoService(),
           )..fetchCryptoTickers(),
           child: const HomePage(),
@@ -30,5 +33,15 @@ final router = GoRouter(
         return BlurDemoView();
       },
     ),
+    GoRoute(path: "/note", builder: (context,state){
+      return NoteAppScreen();
+    }),
+    GoRoute(path: "/notedetail", builder: (context,state){
+      final data = state.extra as NoteModel;
+      return NoteDetails(note: data);
+    }),
+    GoRoute(path: "/noteadd", builder: (context,state){
+      return NoteAdding();
+    }),
   ],
 );
