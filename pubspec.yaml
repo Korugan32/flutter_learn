@@ -12,6 +12,8 @@ dependencies:
   json_annotation: ^4.9.0
   go_router: ^16.0.0
   flutter_slidable: ^4.0.0
+  flutter_localization: ^0.3.3
+  easy_localization: ^3.0.8
   flutter:
     sdk: flutter
 
@@ -24,6 +26,7 @@ dev_dependencies:
   json_serializable: ^6.7.1
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/images.jpg
